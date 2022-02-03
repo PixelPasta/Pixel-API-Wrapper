@@ -1,0 +1,534 @@
+### Thank you for using Pixel API :)
+
+- [Support Server](https://discord.gg/GDbTdhKs9c)
+- [Access the API directly](https://pixelpasta.github.io/API.html)
+
+
+## To install the package - 
+```
+npm install pixel-api-wrapper
+```
+
+# <u> Usage </u>
+# Data endpoints
+## Npm Package Query -
+```js
+const pixel = require('pixel-api-wrapper')
+async function npm(name) {
+   let name2 = await pixel.NpmPackage(name)
+   return console.log(name2)
+  }
+npm('discord.js')
+// Returns an object with package details
+```
+> Example Response:
+> 
+> {"name":"discord.js","version":"13.6.0","description":"A powerful library for interacting with the Discord API","licence":"Apache-2.0","author":"hydrabolt, crawl, spaceeec"}
+## Weather Query - 
+```js
+const pixel = require('pixel-api-wrapper')
+async function weather(location) {
+    let content = await pixel.Weather(location)
+    return console.log(content)
+}
+weather('USA')
+// Returns an object with weather details
+```
+> Example Response:
+>
+> {"info":{"location":"Concord Regional Airport","country":"United States of America","region":"Concord"},"weather":{"temp_c":0,"temp_f":32,"feels_c":-2.2,"feels_f":28,"condition":"Clear",
+"icon":"https://cdn.weatherapi.com/weather/64x64/night/113.png"}}
+## Github User -
+```js
+async function github(username) {
+    let content = await pixel.Github(username)
+    return console.log(content)
+}
+
+github('PixelPasta')
+//returns an object with user details
+```
+>Example Response:
+>
+>{"username":"PixelPasta","avatar_url":"https://avatars.githubusercontent.com/u/80410384?v=4","github_page":"https://github.com/PixelPasta","bio":"I make games and discord bots :)","created_at":"2021-03-10T15:30:47Z"}
+## Color Info from hex code - 
+```js
+async function color(hex) {
+    let content = await pixel.colorinfo(hex)
+    return console.log(content) 
+}
+
+color(`5865F2`)
+// returns an image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/data/colorinfo/?hex=5865F2">
+## youtube search - 
+```js
+async function youtube(video) {
+    let content = await pixel.youtube(video)
+    return console.log(content)
+} 
+
+youtube(`Wait, you're not done building it?`)
+// returns an object
+```
+>Example Response
+>
+>{"title":"\"Wait you're not done building it?\" [Original]","description":"Yes, I am the original creator of this viral video, also I don't care if you repost it just credit it Instagram ...","author":"Nick Aston",
+"channel":"https://www.youtube.com/c/NickAston",
+"video":"https://youtu.be/qDAd8qkIwsg",
+"views":"668,992 views",
+"thumbnail":"https://i.ytimg.com/vi/qDAd8qkIwsg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQIb03Gssa-p8naTa3FNq_Qx2uzg",
+"thumbail_nsfw_score":0.008482174947857857}
+## Spotify search - 
+```js
+async function spotify(song) {
+    let content = await pixel.spotify(song)
+    return console.log(content)
+}
+
+spotify(`Never gonna give you up`)
+// returns an object
+```
+>Example Response
+>
+>{
+  name: 'Never Gonna Give You Up',
+  url: 'https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT',
+  explicit: false,
+  artists: 'Rick Astley',
+  album: {
+    album_name: 'Whenever You Need Somebody',
+    release_date: '1987-11-12',
+    total_tracks: 10,
+    external_url: 'https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT',
+    images: {
+      height: 640,
+      url: 'https://i.scdn.co/image/ab67616d0000b2735755e164993798e0c9ef7d7a',
+      width: 640
+    }
+  }
+}
+## Lyrics search - 
+```js
+async function lyrics(song) {
+    let content = await pixel.lyrics(song)
+    return console.log(content)
+}
+
+lyrics(`Galdive - sorbet`)
+// returns an object
+```
+>Example Response
+>
+>{
+  lyrics: 'Come on Sunday\n' +
+    '\n' +
+    "It's a bright Monday everybody's going blind\n" +
+    'Looking for the weekend honey is a long way drive\n' +
+    'Hold on to your sunnies, it is only Tuesday\n' +
+    'Maybe time could fly so high\n' +
+    'Till you and I meet again for a while\n' +
+    '\n' +
+    'Come on Sunday\n' +
+    "I've been waiting up on that sorbet\n" +
+    "Maybe five or six I'll meet you halfway\n" +
+    'Take off all your things\n' +
+    'Then you and I could be together in this place\n' +
+    'Together chasing waves\n' +
+    "It's the day for you and I\n" +
+    '\n' +
+    "It's a busy subway, Wednesday is looking tight\n" +
+    'Hello again Thursday, honey is a long way drive\n' +
+    "I forget all the highways, pretend today's Friday\n" +
+    'Maybe time could fly so high\n' +
+    'Till you and I meet again for a while\n' +
+    '\n' +
+    'Come on Sunday\n' +
+    "I've been waiting up on that sorbet\n" +
+    "Maybe five or six I'll meet you halfway\n" +
+    'Take off all your things\n' +
+    'Then you and I could be together in this place\n' +
+    'Together chasing waves\n' +
+    "It's the day for you and I\n" +
+    '\n' +
+    'Come on Sunday\n' +
+    "I've been waiting up on that sorbet\n" +
+    "Maybe five or six I'll meet you halfway\n" +
+    'Take off all your things\n' +
+    'Then you and I could be together in this place\n' +
+    'Together chasing waves\n' +
+    "It's the day for you and I"
+}
+
+# Meme Endpoints - 
+## Spongebob burn - 
+```js
+async function spongebob(text) {
+    let content = await pixel.spongebob(text)
+    return console.log(content)
+}
+
+spongebob(`Pineapple has rights`)
+// returns an image url
+```
+>Example response
+>
+><img src="https://pixel-api-production.up.railway.app/image/spongebobburn/?text=Pineapple%20has%20rights">
+
+## Panik - 
+```js
+async function panik(panik1, kalm, panik2) {
+    let content = await pixel.panik(panik1, kalm, panik2)
+    return console.log(content)
+}
+
+panik(`query1`, `query2`, `query3`)
+// returns an image url
+```
+>Example response
+>
+><img src="https://pixel-api-production.up.railway.app/image/panik/?panik1=query1&kalm=query2&panik2=query3">
+## Change my mind - 
+```js
+async function changemymind(text) {
+    let content = await pixel.changemymind(text)
+    return console.log(content)
+}
+
+changemymind(`Pineapple doesn't belong on pizza`)
+// returns an image url
+```
+>Example response
+>
+><img src="https://pixel-api-production.up.railway.app/image/changemymind/?text=Pineapple%20doesn't%20belong%20on%20pizza">
+### Abandon -
+```js
+async function abandon(text) {
+    let content = await pixel.abandon(text)
+    return console.log(content)
+}
+
+abandon(`Pineapple has rights`)
+// returns an image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/abandon/?text=Pineapple%20has%20rights">
+## Trash -
+```js
+async function trash(avatar) {
+    let content = await pixel.trash(avatar)
+    return console.log(content)
+}
+
+trash(`https://cravatar.eu/helmhead/9_cf/68.png`)
+// returns an image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/trash/?image=https://cravatar.eu/helmhead/9_cf/68.png">
+## This Guy - 
+```js
+async function thisguy(avatar) {
+    let content = await pixel.thisguy(avatar)
+    return console.log(content)
+}
+
+thisguy(`https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/this-guy/?image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png">
+## Tweet -
+```js
+async function tweet(avatar, username, text) {
+    let content = await pixel.tweet(avatar, username, text)
+    return console.log(content)
+}
+
+tweet(`https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png`, `WonkyPigs`, `I put pineapple on pizza`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/tweet?username=WonkyPigs&text=I%20put%20pineapple%20on%20pizza&image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png">
+## Gay - 
+```js
+async function gay(image) {
+    let content = await pixel.gay(image)
+    return console.log(content)
+}
+
+gay(`https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/gay/?image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png">
+## Sepia -
+```js
+async function sepia(image) {
+    let content = await pixel.sepia(image)
+    return console.log(content)
+}
+
+sepia(`https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/sepia/?image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png">
+## Stonks - 
+```js
+async function stonks(image) {
+    let content = await pixel.stonks(image)
+    return console.log(content)
+}
+
+stonks(`https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/stonks/?image=https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png">
+## Not Stonks - 
+```js
+async function notstonks(image) {
+    let content = await pixel.notstonks(image)
+    return console.log(content)
+}
+
+notstonks(`https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png`)
+```
+>Example response
+>
+><img src="https://pixel-api-production.up.railway.app/image/notstonks/?image=https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png">
+## Triggered - 
+```js
+async function triggered(image) {
+    let content = await pixel.triggered(image)
+    return console.log(content)
+}
+
+triggered(`https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/triggered/?image=https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png">
+## Grayscale -
+```js
+async function grayscale(image) {
+    let content = await pixel.grayscale(image)
+    return console.log(content)
+}
+
+grayscale(`https://pixel-api-production.up.railway.app/image/grayscale/?image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png`)
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/grayscale/?image=https://pixel-api-production.up.railway.app/image/grayscale/?image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png">
+# Fun Endpoints -
+## Fact - 
+```js
+async function fact() {
+    let content = await pixel.fact()
+    return console.log(content)
+}
+
+fact()
+// returns string
+```
+>Example Response
+>
+>"It would take approximately twenty-four trees that are on average six to eight inches in diameter to produce one ton of newsprint for the Sunday edition of the New York Times."
+## Joke -
+```js
+async function joke() {
+    let content = await pixel.joke()
+    return console.log(content)
+}
+
+joke()
+// returns string
+```
+>Example Response
+>
+>"Insanity is defined as doing the same thing over and over again, expecting different results."
+## Riddle - 
+```js
+async function riddle() {
+    let content = await pixel.riddle()
+    return console.log(content)
+}
+
+riddle()
+// returns object
+```
+>Example Response
+>
+>{"riddle":"What has a thumb and four fingers, but is not a hand?","answer":"Glove"}
+## Quote -
+```js
+async function quote() {
+    let content = await pixel.quote()
+    return console.log(content)
+}
+
+quote()
+// returns object
+```
+>Example Response
+>
+>{"quote":"Life isn't about finding yourself. Life is about creating yourself.","author":"George Bernard Shaw"}
+## Chat Bot - 
+```js
+async function chatbot(message) {
+    let content = await pixel.chatbot(message)
+    return console.log(content)
+}
+
+chatbot("Hello! How are you? :)")
+// returns an object
+```
+>Example Response
+>
+>{ message: "Hi, Loyal! Do you want me to tell you a story? I'm fine and excited to talk with you. How are you?"}
+## advice - 
+```js
+async function advice() {
+    let content = await pixel.advice()
+    return console.log(content)
+}
+
+advice()
+// returns an object
+```
+>Example Response
+>
+>{
+  advice: "Never regret. If it's good, it's wonderful. If it's bad, it's experience."
+}
+## Would you rather - 
+```js
+async function wouldyourather() {
+    let content = await pixel.wouldyourather()
+    return console.log(content)
+}
+
+wouldyourather()
+// returns object
+```
+>Example Reponse
+>
+>{
+  option_1: { question: 'Always look 8 months pregnant', votes: '116,940' },
+  option_2: { question: 'Always have a black eye', votes: '832,609' }
+}
+## ScreenShot Website
+```js
+async function websitescreenshot(Link) {
+    let content = await pixel.websitescreenshot(Link)
+    return console.log(content)
+}
+
+websitescreenshot(`https://github.com/PixelPasta`)
+// returns image url
+```
+>Example Response
+>
+><img src='https://pixel-api-production.up.railway.app/fun/websitescreenshot/?link=https://github.com/PixelPasta'>
+# Text Endpoints -
+## Emojify - 
+```js
+async function emojify(text) {
+    let content = await pixel.emojify(text)
+    return console.log(content)
+}
+
+emojify(`query`)
+// returns string
+```
+>Example Response
+>
+>":regional_indicator_q::regional_indicator_u::regional_indicator_e:
+:regional_indicator_r::regional_indicator_y:"
+## Owoify - 
+```js
+async function owoify(text) {
+    let content = await pixel.owoify(text)
+    return console.log(content)
+}
+
+owoify(`Hello! How are you?`)
+// returns string
+```
+>Example Response
+>
+>"Hewwo owo  how awe you?"
+## Cat Text -
+```js
+async function cattext() {
+    let content = await pixel.cattext()
+    return console.log(content)
+}
+
+cattext()
+// returns string
+```
+>Example Response
+>
+>"=＾● ⋏ ●＾="
+## Reverse - 
+```js
+async function reverse(text) {
+    let content = await pixel.reverse(text)
+    return console.log(content)
+}
+
+reverse(`query`)
+// returns string
+```
+>Example Response
+>
+>"yreuq"
+## Zalgo - 
+```js
+async function zalgo(text) {
+    let content = await pixel.zalgo(text)
+    return console.log(content)
+}
+
+zalgo(`Query`)
+// returns string
+```
+>Example Response
+>
+>"Q̠̜̫͑̓̈́̌͡u̵̴̙̠͔̬̼̍e͓̱̳̎̔̇̀r̫͒ͥͧ̂y̦̾̒̂ͯͧ̀"
+>
+>⠀
+## Encode binary - 
+```js
+async function encodebinary(text) {
+   let content = await pixel.encode(text)
+   return console.log(content)
+}
+
+encodebinary(`My name is Yoshikage Kira. I'm 33 years old.`)
+// returns an object
+```
+>Example Response
+>
+>{"encoded":"01001101011110010010000... (I shortened the example response because of npm limitations"}
+## Decode binary - 
+```js
+async function decodebinary(text) {
+    let content = await pixel.decode(text)
+    return console.log(content)
+}
+
+decodebinary("0100110101111001001000000110111001100001011011010110010100100000011010010111001100100000010110010110111101110011011010000110100101101011011000010110011101100101001000000100101101101001011100100110000100101110001000000100100100100111011011010010000000110011001100110010000001111001011001010110000101110010011100110010000001101111011011000110010000101110")
+// returns an object
+```
+>Example Response
+>
+>{"decoded":"My name is Yoshikage Kira. I'm 33 years old."}
+

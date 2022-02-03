@@ -1,0 +1,18 @@
+{
+  "name": "pixel-api-wrapper",
+  "version": "1.2.10",
+  "description": "Wrapper for the Pixel API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "fun"
+  ],
+  "author": "PixelPasta",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
