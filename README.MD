@@ -162,7 +162,19 @@ lyrics(`Galdive - sorbet`)
     'Together chasing waves\n' +
     "It's the day for you and I"
 }
+## Translate - 
+```js
+async function translate(to, from, text) {
+    let content = await pixel.translate(to, from, text)
+    return console.log(content)
+}
 
+translate(`English`, `Japanese`, `Sushi ga oishi desu nee`)
+// returns an object
+```
+>Example Response
+>
+>{ translated: 'Sushi is delicious' }
 # Meme Endpoints - 
 ## Spongebob burn - 
 ```js

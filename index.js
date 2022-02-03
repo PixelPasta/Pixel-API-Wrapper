@@ -346,3 +346,12 @@ exports.websitescreenshot = async function(link) {
     }
     return `https://pixel-api-production.up.railway.app/fun/websitescreenshot/?link=${link}`
 }
+
+exports.translate = async function(to, from, text) {
+    if (!to) return {error: "No To language Provided"}
+    if (!from) return {error: "No From language provided"}
+    if (!text) return {error: "No Text Provided"}
+    let content = await fetch(`https://pixel-api-production.up.railway.app/data/translate/?to=${to}&from=${from}&text=${text}`)
+    content = content.json()
+    return content
+}

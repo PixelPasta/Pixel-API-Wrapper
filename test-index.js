@@ -238,3 +238,10 @@ async function websitescreenshot(Link) {
 }
 
 websitescreenshot(`https://github.com/PixelPasta`)
+
+async function translate(to, from, text) {
+    let content = await pixel.translate(to, from, text)
+    return console.log(content)
+}
+
+translate(`English`, `Japanese`, `Sushi ga oishi desu nee`)
