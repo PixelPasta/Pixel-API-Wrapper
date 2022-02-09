@@ -175,6 +175,41 @@ translate(`English`, `Japanese`, `Sushi ga oishi desu nee`)
 >Example Response
 >
 >{ translated: 'Sushi is delicious' }
+# Website Favicon - 
+```js
+async function favicon(url) {
+    let content = await pixel.favicon(url)
+    console.log(content)
+}
+
+favicon(`pixelpasta.github.io`)
+// returns an image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/data/favicon/?url=pixelpasta.github.io">
+# Book Information Search - 
+```js
+async function book(query) {
+    let content = await pixel.book(query)
+    console.log(content)
+}
+
+book(`Re:Zero`)
+// returns image url
+```
+>Example Response
+>
+>{
+  title: 'Re:ZERO -Starting Life in Another World-, Vol. 1 (light novel)',
+  authors: [ 'Tappei Nagatsuki' ],
+  publisher: 'Yen Press LLC',
+  publish_date: '2016-07-19',
+  description: "Subaru Natsuki was just trying to get to the convenience store but wound up summoned to another world. He encounters the usual things--life-threatening situations, silver haired beauties, cat fairies--you know, normal stuff. All that would be bad enough, but he's also gained the most inconvenient magical ability of all--time travel, but he's got to die to use it. How do you repay someone who saved your life when all you can do is die?",
+  pageCount: 240,
+  categories: [ 'Fiction' ],
+  cover_image: 'http://books.google.com/books/content?id=UhWzCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
+}
 # Meme Endpoints - 
 ## Spongebob burn - 
 ```js
@@ -338,6 +373,33 @@ grayscale(`https://pixel-api-production.up.railway.app/image/grayscale/?image=ht
 >Example Response
 >
 ><img src="https://pixel-api-production.up.railway.app/image/grayscale/?image=https://pixel-api-production.up.railway.app/image/grayscale/?image=https://cdn.discordapp.com/avatars/728910914149023776/a_8349e9628120cb95c9694acdea8ea5cd.png">
+# Pooh - 
+```js
+async function pooh(toptext, bottomtext) {
+    let content = await pixel.pooh(toptext, bottomtext)
+    console.log(content)
+}
+
+pooh('Windows users making a program to hack NASA', 'Linux users connecting to WiFi')
+// returns image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/pooh/?toptext=Windows%20users%20making%20a%20program%20to%20hack%20NASA&bottomtext=Linux%20users%20connecting%20to%20WiFi">
+# QR Code - 
+```js
+async function qrcode(url) {
+    let content = await pixel.qrcode(url)
+    console.log(content)
+}
+
+qrcode(`https://pixelpasta.github.io`)
+// returns image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/qrcode/?url=https://pixelpasta.github.io">
+##
 # Fun Endpoints -
 ## Fact - 
 ```js

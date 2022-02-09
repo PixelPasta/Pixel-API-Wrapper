@@ -355,3 +355,26 @@ exports.translate = async function(to, from, text) {
     content = content.json()
     return content
 }
+
+exports.favicon = async function(url) {
+    if (!url) return {error: "No URL provided"}
+    return `https://pixel-api-production.up.railway.app/data/favicon/?url=${url.replaceAll(" ", "%20")}`
+}
+
+exports.book = async function(query) {
+    if (!query) return {error: "No URL provided"}
+    let content = await fetch(`https://pixel-api-production.up.railway.app/data/book/?query=${query}`)
+    content = await content.json()
+    return content
+}
+
+exports.qrcode = async function(url) {
+    if (!url) return {error: "No URL provided"}
+    return `https://pixel-api-production.up.railway.app/image/qrcode/?url=${url.replaceAll(" ", "%20")}`
+}
+
+exports.pooh = async function(toptext, bottomtext) {
+    if (!toptext) return {error: "No Top Text Provided"}
+    if (!bottomtext) return {error: "No Bottom Text Provided"}
+    return `https://pixel-api-production.up.railway.app/image/pooh/?toptext=${toptext.replaceAll(" ", "%20")}&bottomtext=${bottomtext.replaceAll(" ", "%20")}`
+}

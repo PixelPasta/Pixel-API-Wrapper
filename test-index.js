@@ -245,3 +245,31 @@ async function translate(to, from, text) {
 }
 
 translate(`English`, `Japanese`, `Sushi ga oishi desu nee`)
+
+async function favicon(url) {
+    let content = await pixel.favicon(url)
+    console.log(content)
+}
+
+favicon(`pixelpasta.github.io`)
+
+async function book(query) {
+    let content = await pixel.book(query)
+    console.log(content)
+}
+
+book(`Re:Zero`)
+
+async function qrcode(url) {
+    let content = await pixel.qrcode(url)
+    console.log(content)
+}
+
+qrcode(`https://pixelpasta.github.io`)
+
+async function pooh(toptext, bottomtext) {
+    let content = await pixel.pooh(toptext, bottomtext)
+    console.log(content)
+}
+
+pooh('Windows users making a program to hack NASA', 'Linux users connecting to WiFi')

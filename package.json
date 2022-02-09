@@ -1,6 +1,6 @@
 {
   "name": "pixel-api-wrapper",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "Wrapper for the Pixel API",
   "main": "index.js",
   "scripts": {
