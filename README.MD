@@ -332,11 +332,11 @@ async function stonks(image) {
     return console.log(content)
 }
 
-stonks(`https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png`)
+stonks(`https://i.ibb.co/8N4Q2nF/st-small-507x507-pad-600x600-f8f8f8.jpg`)
 ```
 >Example Response
 >
-><img src="https://pixel-api-production.up.railway.app/image/stonks/?image=https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png">
+><img src="https://pixel-api-production.up.railway.app/image/stonks/?image=https://i.ibb.co/8N4Q2nF/st-small-507x507-pad-600x600-f8f8f8.jpg">
 ## Not Stonks - 
 ```js
 async function notstonks(image) {
@@ -344,11 +344,11 @@ async function notstonks(image) {
     return console.log(content)
 }
 
-notstonks(`https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png`)
+notstonks(`https://i.ibb.co/8N4Q2nF/st-small-507x507-pad-600x600-f8f8f8.jpg`)
 ```
 >Example response
 >
-><img src="https://pixel-api-production.up.railway.app/image/notstonks/?image=https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png">
+><img src="https://pixel-api-production.up.railway.app/image/notstonks/?image=https://i.ibb.co/8N4Q2nF/st-small-507x507-pad-600x600-f8f8f8.jpg">
 ## Triggered - 
 ```js
 async function triggered(image) {
@@ -356,11 +356,11 @@ async function triggered(image) {
     return console.log(content)
 }
 
-triggered(`https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png`)
+triggered(`https://i.ibb.co/8N4Q2nF/st-small-507x507-pad-600x600-f8f8f8.jpg`)
 ```
 >Example Response
 >
-><img src="https://pixel-api-production.up.railway.app/image/triggered/?image=https://cdn.discordapp.com/avatars/652086748167405568/6c5b16281fb7b9c99eca91b5b7d5191f.png">
+><img src="https://pixel-api-production.up.railway.app/image/triggered/?image=https://i.ibb.co/8N4Q2nF/st-small-507x507-pad-600x600-f8f8f8.jpg">
 ## Grayscale -
 ```js
 async function grayscale(image) {
