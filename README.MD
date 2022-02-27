@@ -399,7 +399,45 @@ qrcode(`https://pixelpasta.github.io`)
 >Example Response
 >
 ><img src="https://pixel-api-production.up.railway.app/image/qrcode/?url=https://pixelpasta.github.io">
-##
+# Drake - 
+```js
+async function drake(top, bottom) {
+    let content = await pixel.drake(top, bottom)
+    console.log(content)
+}
+
+drake(`Query`, `Query2`)
+// returns image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/drake/?toptext=Query&bottomtext=Query2">
+# Lisa Presentation -
+```js
+async function lisapresentation(text) {
+    let content = await pixel.lisapresentation(text)
+    console.log(content)
+}
+
+lisapresentation(`Query`)
+// returns image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/lisapresentation/?text=Query">
+# minecraft achievement - 
+```js
+async function minecraftachievement(text) {
+    let content = await pixel.minecraftachievement(text)
+    console.log(content)
+}
+
+minecraftachievement(`query`)
+// returns image url
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/minecraft/?text=query">
 # Fun Endpoints -
 ## Fact - 
 ```js
@@ -605,4 +643,17 @@ decodebinary("010011010111100100100000011011100110000101101101011001010010000001
 >Example Response
 >
 >{"decoded":"My name is Yoshikage Kira. I'm 33 years old."}
+## Mocking Text - 
+```js
+async function mock(text) {
+    let content = await pixel.mock(text)
+    console.log(content)
+}
+
+mock(`Pineapple belongs on pizza`)
+// returns object
+```
+>Example Response
+>
+>{"text":"piNEAPpLe beLoNgs oN pIZzA"}
 
