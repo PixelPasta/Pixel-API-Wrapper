@@ -1,6 +1,6 @@
 {
   "name": "pixel-api-wrapper",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "description": "Wrapper for the Pixel API",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,14 @@
   },
   "keywords": [
     "API",
-    "fun"
+    "fun",
+    "image",
+    "image manipulation",
+    "text",
+    "meme",
+    "discord",
+    "data",
+    "wrapper"
   ],
   "author": "PixelPasta",
   "license": "ISC",

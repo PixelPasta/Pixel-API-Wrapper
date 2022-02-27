@@ -378,3 +378,26 @@ exports.pooh = async function(toptext, bottomtext) {
     if (!bottomtext) return {error: "No Bottom Text Provided"}
     return `https://pixel-api-production.up.railway.app/image/pooh/?toptext=${toptext.replaceAll(" ", "%20")}&bottomtext=${bottomtext.replaceAll(" ", "%20")}`
 }
+
+exports.mock = async function(text) {
+    if (!text) return {error: "no text provided"}
+    let content = await fetch(`https://pixel-api-production.up.railway.app/text/mock/?text=${text}`)
+    content = await content.json()
+    return content
+}
+
+exports.drake = async function(top, Bottom) {
+    if (!top) return {error: "No top text provided"}
+    if (!Bottom) return {error: "No bottom text provided"}
+    return `https://pixel-api-production.up.railway.app/image/drake/?toptext=${top.replaceAll(" ", "%20")}&bottomtext=${Bottom.replaceAll(" ", "%20")}`
+}
+
+exports.lisapresentation = async function(text) {
+    if (!text) return {error: "No Text Provided"}
+    return `https://pixel-api-production.up.railway.app/image/lisapresentation/?text=${text.replaceAll(" ", "%20")}`
+}
+
+exports.minecraftachievement = async function(text) {
+    if (!text) return {error: "No Text Provided"}
+    return `https://pixel-api-production.up.railway.app/image/minecraft/?text=${text}`
+}

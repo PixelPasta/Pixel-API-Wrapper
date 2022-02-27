@@ -273,3 +273,31 @@ async function pooh(toptext, bottomtext) {
 }
 
 pooh('Windows users making a program to hack NASA', 'Linux users connecting to WiFi')
+
+async function mock(text) {
+    let content = await pixel.mock(text)
+    console.log(content)
+}
+
+mock(`Query`)
+
+async function drake(top, bottom) {
+    let content = await pixel.drake(top, bottom)
+    console.log(content)
+}
+
+drake(`Query`, `Query2`)
+
+async function lisapresentation(text) {
+    let content = await pixel.lisapresentation(text)
+    console.log(content)
+}
+
+lisapresentation(`Query`)
+
+async function minecraftachievement(text) {
+    let content = await pixel.minecraftachievement(text)
+    console.log(content)
+}
+
+minecraftachievement(`query`)
