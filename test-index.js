@@ -301,3 +301,17 @@ async function minecraftachievement(text) {
 }
 
 minecraftachievement(`query`)
+
+async function minecraftskin({username, type}) {
+    let content = await pixel.minecraftskin({username, type})
+    console.log(content)
+}
+
+minecraftskin({username: 'ItsMePixel_', type: 'body'})
+
+async function minecraftserver(ip) {
+    let content = await pixel.minecraftserver(ip)
+    console.log(content)
+}
+
+minecraftserver(`mc.hypixel.net`)

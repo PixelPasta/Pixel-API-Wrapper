@@ -401,3 +401,20 @@ exports.minecraftachievement = async function(text) {
     if (!text) return {error: "No Text Provided"}
     return `https://pixel-api-production.up.railway.app/image/minecraft/?text=${text}`
 }
+
+exports.minecraftskin = async function({username, type}) {
+    if (!username) return {error: "No Username provided"}
+    if (!type) return {error: "No Type Provided"}
+    console.log(type != 'body' || type != 'head' || type != 'avatar') 
+    if (type == 'body') return `https://pixel-api-production.up.railway.app/image/skin/body/?username=${username}`
+    if (type == 'head') return `https://pixel-api-production.up.railway.app/image/skin/head/?username=${username}`
+    if (type == 'avatar') return `https://pixel-api-production.up.railway.app/image/skin/avatar/?username=${username}`
+    return {error: 'invalid skin type! Type must be \'body\', \'head\' or \'avatar\''}
+}
+
+exports.minecraftserver = async function(ip) {
+    if (!ip) return {error: 'no IP provided'}
+    let content = await fetch(`https://pixel-api-production.up.railway.app/data/mcserver/?ip=${ip}`)
+    content = await content.json()
+    return content
+}

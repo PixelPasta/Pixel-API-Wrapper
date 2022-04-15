@@ -210,6 +210,33 @@ book(`Re:Zero`)
   categories: [ 'Fiction' ],
   cover_image: 'http://books.google.com/books/content?id=UhWzCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
 }
+## Minecraft Java server information - 
+```js
+async function minecraftserver(ip) {
+    let content = await pixel.minecraftserver(ip)
+    console.log(content)
+}
+
+minecraftserver(`mc.hypixel.net`)
+// returns object
+```
+>Example Response
+>
+>{
+>version: { name: 'Requires MC 1.8 / 1.18', protocol: 47 },
+  players: { online: 49325, max: 200000, sample: [] },
+  motd: {
+    raw: '§f                §aHypixel Network §c[1.8-1.18]§f\n' +
+      '    §e§lEASTER EVENT §7- §b§lMINIGAME, SALE, AND MORE!',
+    clean: '                Hypixel Network [1.8-1.18]\n' +
+      '    EASTER EVENT - MINIGAME, SALE, AND MORE!',
+    html: '<span><span style="color: #FFFFFF;">                </span><span style="color: #55FF55;">Hypixel Network </span><span style="color: #FF5555;">[1.8-1.18]</span><span style="color: #FFFFFF;">\n' +
+      '    </span><span style="color: #FFFF55; font-weight: bold;">EASTER EVENT </span><span style="color: #AAAAAA;">- </span><span style="color: #55FFFF; font-weight: bold;">MINIGAME, SALE, AND MORE!</span></span>'
+  },
+  srvRecord: null,
+  roundTripLatency: 52,
+  favicon_url: 'https://pixel-api-production.up.railway.app/favicon/mc.hypixel.net'
+}
 # Meme Endpoints - 
 ## Spongebob burn - 
 ```js
@@ -438,6 +465,20 @@ minecraftachievement(`query`)
 >Example Response
 >
 ><img src="https://pixel-api-production.up.railway.app/image/minecraft/?text=query">
+# Minecraft Skin -
+```js
+async function minecraftskin({username, type}) {
+    let content = await pixel.minecraftskin({username, type})
+    console.log(content)
+}
+
+minecraftskin({username: 'ItsMePixel_', type: 'body'})
+// returns image url
+// type can be 'head', 'body' or 'avatar'
+```
+>Example Response
+>
+><img src="https://pixel-api-production.up.railway.app/image/skin/body/?username=ItsMePixel_">
 # Fun Endpoints -
 ## Fact - 
 ```js
